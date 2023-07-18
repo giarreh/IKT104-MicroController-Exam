@@ -1,0 +1,29 @@
+{
+      "config": {
+        
+        "use-tls-socket": {
+            "value": true
+        }
+      },
+    "target_overrides": {
+        "*": {
+                "nsapi.default-wifi-security": "WPA_WPA2",
+                "nsapi.default-wifi-ssid": "\"Omen\"",
+                "nsapi.default-wifi-password": "\"12345678\"",
+                "rtos.main-thread-stack-size": 16384,
+                "platform.minimal-printf-enable-floating-point": true
+            
+             },
+             
+        "DISCO_L475VG_IOT01A": {
+            "target.components_add": ["ism43362"],
+            "ism43362.provide-default":true,
+            "target.network-default-interface-type": "WIFI",
+            "target.macros_add" : ["MBEDTLS_SHA1_C"]
+        },
+        "K64F": {
+            "target.macros_add" : ["MBEDTLS_SHA1_C"]
+        }
+        
+    } 
+}
